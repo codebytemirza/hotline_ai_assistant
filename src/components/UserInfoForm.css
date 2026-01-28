@@ -1,0 +1,223 @@
+/* UserInfoForm Component Styles */
+
+.user-info-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    padding: var(--space-xl);
+    background: var(--color-bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: slideUp 0.4s ease;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: var(--space-md);
+}
+
+.form-header h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    margin-bottom: var(--space-sm);
+    color: var(--color-text-primary);
+}
+
+.form-header p {
+    color: var(--color-text-muted);
+    font-size: 0.9375rem;
+}
+
+/* Form Group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.form-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+}
+
+.required {
+    color: var(--color-accent-danger);
+}
+
+.form-group input {
+    padding: var(--space-md);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    transition: all var(--transition-normal);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--color-accent-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.form-group input.error {
+    border-color: var(--color-accent-danger);
+}
+
+.form-helper {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+}
+
+.form-error {
+    font-size: 0.75rem;
+    color: var(--color-accent-danger);
+}
+
+/* Form Row */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+}
+
+@media (max-width: 640px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Form Divider */
+.form-divider {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin: var(--space-sm) 0;
+}
+
+.form-divider::before,
+.form-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.form-divider span {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Location Button */
+.location-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-lg);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px dashed rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-md);
+    color: var(--color-text-secondary);
+    font-size: 0.9375rem;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.location-btn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--color-accent-primary);
+    color: var(--color-text-primary);
+}
+
+.location-btn:disabled {
+    cursor: wait;
+}
+
+.location-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.location-btn.loading {
+    color: var(--color-accent-warm);
+}
+
+/* Location Success */
+.location-success {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: rgba(90, 138, 107, 0.1);
+    border: 1px solid rgba(90, 138, 107, 0.3);
+    border-radius: var(--radius-md);
+}
+
+.location-success svg {
+    width: 24px;
+    height: 24px;
+    color: var(--color-accent-success);
+    flex-shrink: 0;
+}
+
+.location-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.location-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-accent-success);
+}
+
+.location-address {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+}
+
+/* Submit Button */
+.submit-btn {
+    margin-top: var(--space-md);
+    width: 100%;
+}
+
+.submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.submit-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Spinner */
+.spinner-small {
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Disclaimer */
+.form-disclaimer {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    margin: 0;
+}

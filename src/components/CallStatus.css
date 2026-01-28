@@ -1,0 +1,68 @@
+/* CallStatus Component Styles - Serious */
+
+.call-status {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    padding: var(--space-md) var(--space-lg);
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.status-text {
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+.call-duration {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    color: var(--color-text-muted);
+    font-size: 0.8125rem;
+    font-family: var(--font-mono);
+}
+
+.duration-icon {
+    width: 14px;
+    height: 14px;
+    opacity: 0.6;
+}
+
+.audio-meter {
+    flex: 1;
+    min-width: 50px;
+    max-width: 100px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.audio-level {
+    height: 100%;
+    background: var(--color-accent-secondary);
+    border-radius: var(--radius-full);
+    transition: width 50ms ease-out;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .call-status {
+        flex-wrap: wrap;
+        gap: var(--space-md);
+    }
+
+    .audio-meter {
+        flex-basis: 100%;
+        max-width: none;
+    }
+}

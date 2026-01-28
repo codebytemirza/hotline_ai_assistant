@@ -1,0 +1,32 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Serious Paper Background -->
+  <rect width="1200" height="630" fill="#f5f1eb" />
+  
+  <!-- Subtle Border -->
+  <rect x="20" y="20" width="1160" height="590" rx="10" stroke="#8b7355" stroke-width="2" stroke-dasharray="10 10" opacity="0.3" />
+
+  <!-- Logo Group -->
+  <g transform="translate(100, 215)">
+    <!-- Outer stability circle -->
+    <circle cx="100" cy="100" r="90" stroke="#8b7355" stroke-width="12" />
+    
+    <!-- Stylized H Lifeline -->
+    <path d="M60 60V140M140 60V140M60 100H140M90 100L100 80L110 120L120 100" stroke="#8b7355" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <!-- Dot of existence -->
+    <circle cx="100" cy="65" r="10" fill="#8b7355" />
+  </g>
+
+  <!-- Text Group -->
+  <g transform="translate(340, 260)">
+    <text font-family="'Crimson Text', serif" font-weight="700" font-size="64" fill="#2c2c2c">Hotline Suicide Help Assistant</text>
+    <text font-family="'Inter', sans-serif" font-weight="500" font-size="32" fill="#6b6b6b" y="60">Providing Immediate Support &amp; Hope</text>
+    <text font-family="'Inter', sans-serif" font-weight="400" font-size="20" fill="#8b7355" y="110" opacity="0.6">PROTOTYPE BY SADAQAT &amp; ABDULLAH</text>
+  </g>
+  
+  <!-- Corner Accents for Paper Art feel -->
+  <path d="M20 100V20H100" stroke="#8b7355" stroke-width="4" fill="none" />
+  <path d="M1100 20H1180V100" stroke="#8b7355" stroke-width="4" fill="none" />
+  <path d="M20 530V610H100" stroke="#8b7355" stroke-width="4" fill="none" />
+  <path d="M1100 610H1180V530" stroke="#8b7355" stroke-width="4" fill="none" />
+</svg>

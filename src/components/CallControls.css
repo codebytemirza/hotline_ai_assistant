@@ -1,0 +1,69 @@
+/* CallControls Component Styles - Serious */
+
+.call-controls {
+    display: flex;
+    justify-content: center;
+    padding: var(--space-lg) 0;
+}
+
+.call-btn {
+    min-width: 180px;
+    position: relative;
+}
+
+.btn-icon-svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+/* Start button */
+.start-btn {
+    background: var(--color-accent-primary);
+    color: var(--color-paper);
+}
+
+.start-btn:hover {
+    background: var(--color-accent-warm);
+    transform: translateY(-1px);
+}
+
+/* Connecting button */
+.connecting-btn {
+    cursor: wait;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.spinner {
+    width: 18px;
+    height: 18px;
+    border: 2px solid transparent;
+    border-top-color: var(--color-text-secondary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* End button */
+.end-btn {
+    background: var(--color-accent-danger);
+    color: var(--color-paper);
+}
+
+.end-btn:hover {
+    background: #9a5a5a;
+    transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .call-btn {
+        min-width: 160px;
+        padding: var(--space-md) var(--space-lg);
+    }
+}

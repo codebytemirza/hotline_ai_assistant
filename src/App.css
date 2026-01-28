@@ -1,0 +1,160 @@
+/* ============================================
+   MEHAK - Mental Health Companion
+   App Layout Styles - Serious Paper Art
+   ============================================ */
+
+/* App Container */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-primary);
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-xl);
+  background: var(--color-bg-secondary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.logo-icon {
+  color: var(--color-accent-primary);
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  padding-left: var(--space-lg);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Error Banner */
+.error-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-xl);
+  background: rgba(138, 74, 74, 0.15);
+  border-bottom: 1px solid rgba(138, 74, 74, 0.3);
+  color: var(--color-text-primary);
+  font-size: 0.875rem;
+  animation: slideUp 0.3s ease;
+}
+
+.error-dismiss {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.error-dismiss:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Main Content - Split Screen */
+.app-main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 0;
+}
+
+.panel {
+  height: calc(100vh - 61px);
+  overflow: hidden;
+}
+
+.panel-left {
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Responsive Layout */
+@media (max-width: 1200px) {
+  .app-main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .app-main {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .panel {
+    height: calc(50vh - 30px);
+  }
+
+  .panel-left {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: var(--space-xs);
+    text-align: center;
+  }
+
+  .tagline {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .panel {
+    height: auto;
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 640px) {
+  .logo-text {
+    font-size: 1.125rem;
+  }
+
+  .logo-mark {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,522 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ============================================
+   MEHAK - Mental Health Companion
+   Design System - Serious Paper Art Aesthetic
+   ============================================ */
+
+/* CSS Variables - Serious, Muted Paper Theme */
+:root {
+  /* Paper Colors - Warm, comforting tones */
+  --color-paper: #f5f1eb;
+  --color-paper-dark: #e8e2d9;
+  --color-paper-light: #faf8f5;
+  --color-ink: #2c2c2c;
+  --color-ink-light: #4a4a4a;
+  --color-ink-muted: #6b6b6b;
+
+  /* Background Colors - Soft, serious tones */
+  --color-bg-primary: #1a1a1f;
+  --color-bg-secondary: #232328;
+  --color-bg-tertiary: #2a2a30;
+  --color-bg-card: rgba(35, 35, 40, 0.95);
+  --color-bg-glass: rgba(255, 255, 255, 0.03);
+
+  /* Text Colors - High contrast for readability */
+  --color-text-primary: #e8e4dc;
+  --color-text-secondary: #b8b4ac;
+  --color-text-muted: #7a7770;
+
+  /* Accent Colors - Muted, professional */
+  --color-accent-primary: #8b7355;
+  /* Warm brown - trustworthy */
+  --color-accent-secondary: #5a7a6b;
+  /* Sage green - calm */
+  --color-accent-calm: #6b8a9a;
+  /* Steel blue - professional */
+  --color-accent-warm: #9a7b5a;
+  /* Amber brown - comforting */
+  --color-accent-success: #5a8a6b;
+  /* Forest green - positive */
+  --color-accent-danger: #8a4a4a;
+  /* Muted red - serious */
+  --color-accent-mehak: #7a6a8a;
+  /* Muted purple - wisdom */
+
+  /* Gradients - Subtle, paper-like */
+  --gradient-paper: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0) 100%);
+  --gradient-subtle: linear-gradient(135deg, rgba(139, 115, 85, 0.1) 0%, rgba(90, 122, 107, 0.05) 100%);
+
+  /* Shadows - Soft, paper-like */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.3);
+  --shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  /* Border Radius - Softer, organic */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* Typography - Classic, readable */
+  --font-serif: 'Crimson Text', 'Georgia', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'Fira Code', 'Consolas', monospace;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+
+  /* Z-index layers */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-modal: 1000;
+  --z-alert: 2000;
+}
+
+/* Reset & Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  line-height: 1.7;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle texture overlay for paper feel */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.02;
+  pointer-events: none;
+  z-index: -1;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Typography - Serious, Professional */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 1.125rem;
+}
+
+p {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+/* Links */
+a {
+  color: var(--color-accent-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  border-bottom: 1px solid transparent;
+}
+
+a:hover {
+  color: var(--color-accent-warm);
+  border-bottom-color: currentColor;
+}
+
+/* Buttons - Serious, Minimal */
+button {
+  font-family: inherit;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all var(--transition-normal);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+.btn-primary {
+  background: var(--color-accent-primary);
+  color: var(--color-paper);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background: var(--color-accent-warm);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-text-muted);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--color-text-secondary);
+}
+
+.btn-danger {
+  background: var(--color-accent-danger);
+  color: var(--color-paper);
+}
+
+.btn-danger:hover {
+  background: #9a5a5a;
+}
+
+.btn-success {
+  background: var(--color-accent-success);
+  color: var(--color-paper);
+}
+
+.btn-lg {
+  padding: var(--space-lg) var(--space-xl);
+  font-size: 1rem;
+}
+
+.btn-sm {
+  padding: var(--space-sm) var(--space-md);
+  font-size: 0.875rem;
+}
+
+/* Cards - Paper-like */
+.card {
+  background: var(--color-bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+/* Input Fields - Classic */
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: var(--space-md);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  transition: all var(--transition-normal);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 0 0 2px rgba(139, 115, 85, 0.15);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* Form Groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.form-helper {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* Scrollbar - Minimal */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-text-muted);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
+}
+
+/* Animations - Subtle, Professional */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+/* Utility Classes */
+.animate-fade-in {
+  animation: fadeIn var(--transition-normal) ease;
+}
+
+.animate-slide-up {
+  animation: slideUp var(--transition-slow) ease;
+}
+
+.animate-shake {
+  animation: shake 0.5s ease;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-primary {
+  color: var(--color-accent-primary);
+}
+
+.text-success {
+  color: var(--color-accent-success);
+}
+
+.text-danger {
+  color: var(--color-accent-danger);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-sm {
+  gap: var(--space-sm);
+}
+
+.gap-md {
+  gap: var(--space-md);
+}
+
+.gap-lg {
+  gap: var(--space-lg);
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.p-sm {
+  padding: var(--space-sm);
+}
+
+.p-md {
+  padding: var(--space-md);
+}
+
+.p-lg {
+  padding: var(--space-lg);
+}
+
+.p-xl {
+  padding: var(--space-xl);
+}
+
+/* Status Indicators - Minimal */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  display: inline-block;
+}
+
+.status-dot.active {
+  background: var(--color-accent-success);
+}
+
+.status-dot.inactive {
+  background: var(--color-text-muted);
+}
+
+.status-dot.warning {
+  background: var(--color-accent-warm);
+  animation: pulse 2s infinite;
+}
+
+.status-dot.danger {
+  background: var(--color-accent-danger);
+}
+
+/* Dividers */
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  margin: var(--space-lg) 0;
+}

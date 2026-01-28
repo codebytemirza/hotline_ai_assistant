@@ -1,0 +1,83 @@
+/* AudioVisualizer Component Styles - Serious */
+
+.audio-visualizer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-sm);
+}
+
+.bars-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    height: 40px;
+}
+
+.bar {
+    width: 4px;
+    min-height: 4px;
+    border-radius: 2px;
+    transition: height 80ms ease-out;
+}
+
+/* Assistant (Mehak) variant - Muted */
+.audio-visualizer.assistant .bar {
+    background: var(--color-accent-secondary);
+}
+
+.audio-visualizer.assistant.active .bar {
+    animation: barPulse 1.2s ease-in-out infinite;
+}
+
+/* User variant */
+.audio-visualizer.user .bar {
+    background: var(--color-accent-primary);
+}
+
+.audio-visualizer.user.active .bar {
+    animation: barPulse 1.2s ease-in-out infinite;
+}
+
+/* Inactive state */
+.audio-visualizer:not(.active) .bar {
+    opacity: 0.2;
+    height: 4px !important;
+}
+
+/* Animation */
+@keyframes barPulse {
+
+    0%,
+    100% {
+        opacity: 0.6;
+        transform: scaleY(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+/* Staggered animation delay */
+.bar:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.bar:nth-child(2) {
+    animation-delay: 0.08s;
+}
+
+.bar:nth-child(3) {
+    animation-delay: 0.16s;
+}
+
+.bar:nth-child(4) {
+    animation-delay: 0.24s;
+}
+
+.bar:nth-child(5) {
+    animation-delay: 0.32s;
+}
