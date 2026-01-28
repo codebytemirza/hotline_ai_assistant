@@ -57,7 +57,7 @@ export default function ClientPanel({
         {showInfoForm && (
           <UserInfoForm
             onSubmit={onUserInfoSubmit}
-            isLoading={callState === 'connecting'}
+            isLoading={callState !== 'idle'}
           />
         )}
 
